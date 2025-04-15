@@ -1,13 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from './user/user.module';
-import { SkillModule } from './skill/skill.module';
 import { ProjectModule } from './project/project.module';
 import { PortfolioFileModule } from './portfolio-file/portfolio-file.module';
 import { PostModule } from './post/post.module';
 import { ExperienceModule } from './experience/experience.module';
-import { ContactModule } from './contact/contact.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -32,13 +29,10 @@ import { MemoModule } from './memo/memo.module';
         charset: 'utf8mb4',
       }),
     }),
-    UserModule,
-    SkillModule,
     ProjectModule,
     PortfolioFileModule,
     PostModule,
     ExperienceModule,
-    ContactModule,
     AuthModule,
     MemoModule,
   ],

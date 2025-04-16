@@ -8,6 +8,7 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MemoModule } from './memo/memo.module';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { MemoModule } from './memo/memo.module';
         autoLoadEntities: true,
         synchronize: config.get<boolean>('DB_SINC'), // 개발 중에만 true로, 배포 시에는 false 권장
         charset: 'utf8mb4',
+        namingStrategy: new SnakeNamingStrategy(),
       }),
     }),
     ProjectModule,

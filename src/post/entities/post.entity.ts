@@ -15,7 +15,7 @@ export enum PostCategory {
   INFO = 'info',
 }
 
-@Entity('post')
+@Entity('')
 export class Post {
   @PrimaryGeneratedColumn()
   id: number;
@@ -32,10 +32,10 @@ export class Post {
   })
   category: PostCategory;
 
-  @CreateDateColumn({ name: 'created_at' })
+  @CreateDateColumn()
   createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updated_at' })
+  @UpdateDateColumn()
   updatedAt: Date;
 
   @OneToMany(() => Memo, (memo) => memo.post, { cascade: true })

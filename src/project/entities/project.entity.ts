@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('project')
+@Entity('')
 export class Project {
   @PrimaryGeneratedColumn()
   id: number;
@@ -17,7 +17,7 @@ export class Project {
   title: string;
 
   @Column('simple-array', { nullable: true })
-  skills: string[]; // ex) ['NestJS', 'MySQL']
+  skill: string[]; // ex) ['NestJS', 'MySQL']
 
   @Column({ nullable: true })
   link: string;

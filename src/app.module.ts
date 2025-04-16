@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
 import { PortfolioFileModule } from './portfolio-file/portfolio-file.module';
 import { PostModule } from './post/post.module';
-import { ExperienceModule } from './experience/experience.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -32,7 +31,6 @@ import { MemoModule } from './memo/memo.module';
     ProjectModule,
     PortfolioFileModule,
     PostModule,
-    ExperienceModule,
     AuthModule,
     MemoModule,
   ],

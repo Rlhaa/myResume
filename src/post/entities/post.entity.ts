@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-// import { Memo } from 'src/memo/entities/';
+import { Memo } from 'src/memo/entities/memo.entity';
 
 export enum PostCategory {
   TIL = 'til',
@@ -32,12 +32,12 @@ export class Post {
   })
   category: PostCategory;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
 
-  //   @OneToMany(() => Memo, (memo) => memo.post, { cascade: true })
-  //   memos: Memo[];
+  @OneToMany(() => Memo, (memo) => memo.post, { cascade: true })
+  memos: Memo[];
 }

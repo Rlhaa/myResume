@@ -2,7 +2,7 @@ import { IsString, IsNotEmpty, IsEnum } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 import { PostCategory } from '../entities/post.entity';
 
-export class LoginDto {
+export class CreatePostDto {
   @ApiProperty({
     description: '글 제목',
     maxLength: 200,
@@ -12,7 +12,7 @@ export class LoginDto {
   title: string;
 
   @ApiProperty({
-    description: '글 제목',
+    description: '카테고리',
     maxLength: 200,
   })
   @IsNotEmpty()
@@ -20,7 +20,7 @@ export class LoginDto {
   category: PostCategory;
 
   @ApiProperty({
-    description: '글 제목',
+    description: '내용',
     maxLength: 200,
   })
   @IsString()

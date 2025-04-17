@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from 'typeorm';
 import { Project } from 'src/project/entities/project.entity';
 
-@Entity('portfolio_File')
+@Entity('')
 export class PortfolioFile {
   @PrimaryGeneratedColumn()
   id: number;

@@ -9,7 +9,7 @@ import {
 } from 'typeorm';
 import { Post } from 'src/post/entities/post.entity';
 
-@Entity('memo')
+@Entity('')
 export class Memo {
   @PrimaryGeneratedColumn()
   id: number;
@@ -27,7 +27,4 @@ export class Memo {
     onDelete: 'CASCADE',
   })
   post: Post;
-
-  //   @OneToMany(() => Memo, (memo) => memo.post, { cascade: true })
-  //   memos: Memo[];
 }

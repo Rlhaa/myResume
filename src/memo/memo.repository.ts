@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Memo } from './entities/memo.entity';
@@ -18,7 +18,7 @@ export class MemosRepository {
   async updateMemo(id: number, content: string) {
     const memo = await this.memosRepository.findOne({ where: { id } });
     if (!memo) {
-      throw new Error('해당 메모를 찾을 수 없습니다.');
+      throw new NotFoundException('해당 메모를 찾을 수 없습니다.');
     }
     memo.content = content;
     return this.memosRepository.save(memo);
@@ -34,7 +34,7 @@ export class MemosRepository {
   async removeMemo(id: number) {
     const memo = await this.memosRepository.findOne({ where: { id } });
     if (!memo) {
-      throw new Error('해당 메모를 찾을 수 없습니다.');
+      throw new NotFoundException('해당 메모를 찾을 수 없습니다.');
     }
     return this.memosRepository.remove(memo);
   }

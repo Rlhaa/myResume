@@ -1,6 +1,14 @@
 // src/memo/dto/update-memo.dto.ts
 
-import { PartialType } from '@nestjs/swagger';
-import { CreateMemoDto } from './create-memo.dto';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
-export class UpdateMemoDto extends PartialType(CreateMemoDto) {}
+export class UpdateMemoDto {
+  @ApiProperty({
+    description: '메모 내용',
+  })
+  @IsString()
+  @IsNotEmpty()
+  @IsOptional()
+  content: string;
+}

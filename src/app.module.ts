@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
 import { PortfolioFileModule } from './portfolio-file/portfolio-file.module';
 import { PostModule } from './post/post.module';
@@ -36,7 +34,5 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
     AuthModule,
     MemoModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}

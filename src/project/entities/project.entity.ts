@@ -3,6 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -42,5 +43,6 @@ export class Project {
     eager: true,
     nullable: true,
   })
+  @JoinColumn()
   portfolioFile: PortfolioFile;
 }

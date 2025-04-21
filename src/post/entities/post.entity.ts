@@ -9,10 +9,10 @@ import {
 import { Memo } from 'src/memo/entities/memo.entity';
 
 export enum PostCategory {
-  TIL = 'til',
-  WIL = 'wil',
-  TROUBLE = 'trouble',
-  INFO = 'info',
+  TIL = 'TIL',
+  WIL = 'WIL',
+  TROUBLE = 'TROUBLE',
+  INFO = 'INFO',
 }
 
 @Entity('')

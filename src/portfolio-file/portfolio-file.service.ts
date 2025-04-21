@@ -1,14 +1,12 @@
-// src/portfolio-file/portfolio-file.service.ts
-
 import { Injectable } from '@nestjs/common';
-import { AwsService } from 'src/aws/aws.service'; // AwsService import 되어있어야 해
+import { PortfolioFileRepository } from './portfolio-file.repository';
 
 @Injectable()
 export class PortfolioFileService {
-  constructor(private readonly awsService: AwsService) {}
+  constructor(private readonly portfolioFileRepository: PortfolioFileRepository) {}
 
-  async uploadPortfolioFile(file: Express.Multer.File) {
-    const url = await this.awsService.uploadFile(file);
-    return { message: '포트폴리오 파일 업로드 완료', url };
+  async createPortfolioFile(url: string) {
+    const createdPortfolioFile = await this.portfolioFileRepository.savePortfolioFile(url);
+    return createdPortfolioFile;
   }
 }

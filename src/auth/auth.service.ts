@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 
@@ -17,9 +17,11 @@ export class AuthService {
     // 입력받은 ID/PW와 관리자 정보 비교
     const isValid = id === adminId && password === adminPw;
 
-    // 불일치 시 null 반환 (또는 예외 처리 가능)
+    // 불일치 시 예외 처리
     if (!isValid) {
-      return null;
+      throw new UnauthorizedException(
+        '아이디 또는 비밀번호가 일치하지 않습니다.',
+      );
     }
 
     // 일치 시 JWT payload 구성 (원하면 role 등 추가 가능)

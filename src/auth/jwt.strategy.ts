@@ -10,7 +10,9 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'admin-jwt') {
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), // Authorization 헤더에서 토큰 추출
       ignoreExpiration: false,
       secretOrKey: configService.get<string>('JWT_SECRET'), // 토큰 검증 시 사용할 키
-    });
+    },
+    'admin-jwt',
+  );
   }
 
   // 검증이 끝난 후 payload를 그대로 요청 객체에 담아 전달

@@ -191,8 +191,8 @@ http://localhost:3000/api
 
 ## 📬 문의
 
-- GitHub: [your-github-id](https://github.com/your-id)
-- Email: your@email.com
+- GitHub: [Rlhaa](https://github.com/Rlhaa)
+- Email: sfzeho1001@gmail.com
 
 ---
 

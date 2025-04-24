@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { PortfolioFile } from './entities/portfolio-file.entity';
@@ -25,7 +25,7 @@ export class PortfolioFileRepository {
     });
 
     if (!project) {
-      throw new Error('프로젝트를 찾을 수 없습니다.');
+      throw new NotFoundException('프로젝트를 찾을 수 없습니다.');
     }
 
     const portfolioFile = this.portfolioFileRepository.create({
@@ -43,7 +43,7 @@ export class PortfolioFileRepository {
     });
 
     if (!project || !project.portfolioFile) {
-      throw new Error('해당 프로젝트에 포트폴리오 파일이 없습니다.');
+      throw new NotFoundException('해당 프로젝트에 포트폴리오 파일이 없습니다.');
     }
 
     return project.portfolioFile.url;

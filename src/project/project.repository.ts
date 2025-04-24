@@ -1,6 +1,6 @@
 // src/project/project.repository.ts
 
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Project } from './entities/project.entity';
@@ -40,7 +40,7 @@ export class ProjectsRepository {
   async findOneProject(id: number) {
     const project = await this.projectsRepository.findOne({ where: { id } });
     if (!project) {
-      throw new Error('해당 프로젝트를 찾을 수 없습니다.');
+      throw new NotFoundException ('해당 프로젝트를 찾을 수 없습니다.');
     }
     return project;
   }

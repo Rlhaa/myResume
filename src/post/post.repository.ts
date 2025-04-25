@@ -30,7 +30,11 @@ export class PostsRepository {
   }
 
   async findAllPosts() {
-    return this.postsRepository.find();
+    return this.postsRepository.find({
+      order: {
+        createdAt: 'DESC',
+      },
+    });
   }
 
   async findOnePost(id: number) {

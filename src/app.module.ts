@@ -7,6 +7,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MemoModule } from './memo/memo.module';
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -27,6 +29,10 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
         charset: 'utf8mb4',
         namingStrategy: new SnakeNamingStrategy(),
       }),
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'), // public 폴더 기준
+      serveRoot: '/', // http://localhost:3000/home/home.html 접근 가능
     }),
     ProjectModule,
     PortfolioFileModule,

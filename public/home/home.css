@@ -1,0 +1,418 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 48px;
+    padding: 20px 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #525252;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #1a1a1a;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: width 0.2s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Intro Section */
+  .intro-section {
+    padding: 100px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .intro-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 80px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .intro-text {
+    flex: 1;
+    max-width: 700px;
+  }
+  
+  .name {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+  }
+  
+  .role {
+    font-size: 22px;
+    color: #525252;
+    font-weight: 500;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+  
+  /* .intro-description {
+    space-y: 20px;
+  } */
+  
+  .intro-description p {
+    font-size: 17px;
+    color: #404040;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .intro-description p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .intro-description strong {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+  
+  .intro-goal {
+    background: #f8f9fa;
+    border-left: 4px solid #1a1a1a;
+    padding: 20px 24px;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #1a1a1a !important;
+    font-weight: 500 !important;
+  }
+  
+  .profile-container {
+    flex-shrink: 0;
+    align-self: center;
+  }
+  
+  .profile-img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Section Styles */
+  .skills-section,
+  .experience-section,
+  .posts-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .posts-section {
+    border-bottom: none;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+  }
+  
+  /* Skills Section */
+  .skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .skill-tag {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    transition: all 0.2s ease;
+  }
+  
+  .skill-tag:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Experience Section */
+  .experience-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .experience-item {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+  }
+  
+  .experience-period {
+    font-size: 15px;
+    font-weight: 600;
+    color: #525252;
+    margin-bottom: 8px;
+  }
+  
+  .experience-company {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+  
+  .experience-description {
+    font-size: 16px;
+    color: #525252;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  
+  .experience-achievement {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: 600;
+    background: #f8f9fa;
+    padding: 12px 20px;
+    border-radius: 8px;
+    display: inline-block;
+  }
+  
+  /* Posts Section */
+  .posts-grid {
+    display: grid;
+    gap: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.2s ease;
+  }
+  
+  .post-card:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  
+  .post-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    line-height: 1.4;
+  }
+  
+  .post-excerpt {
+    font-size: 15px;
+    color: #525252;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .post-link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  .post-link:hover {
+    color: #525252;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+    
+    .nav-list {
+      gap: 24px;
+      padding: 16px 0;
+    }
+    
+    .nav-link {
+      font-size: 14px;
+    }
+    
+    .intro-section {
+      padding: 60px 0;
+    }
+    
+    .intro-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .intro-text {
+      max-width: 100%;
+    }
+    
+    .name {
+      font-size: 36px;
+    }
+    
+    .role {
+      font-size: 20px;
+      margin-bottom: 24px;
+    }
+    
+    .intro-description p {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+    
+    .intro-goal {
+      padding: 16px 20px;
+    }
+    
+    .profile-img {
+      width: 140px;
+      height: 140px;
+    }
+    
+    .skills-section,
+    .experience-section,
+    .posts-section {
+      padding: 48px 0;
+    }
+    
+    .section-title {
+      font-size: 24px;
+    }
+    
+    .section-header {
+      margin-bottom: 32px;
+    }
+    
+    .skills-grid {
+      gap: 12px;
+    }
+    
+    .skill-tag {
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+    
+    .experience-item,
+    .post-card {
+      padding: 24px;
+    }
+    
+    .posts-grid {
+      gap: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-list {
+      gap: 16px;
+    }
+    
+    .intro-content {
+      gap: 32px;
+    }
+    
+    .name {
+      font-size: 28px;
+    }
+    
+    .role {
+      font-size: 18px;
+    }
+    
+    .intro-description p {
+      font-size: 15px;
+    }
+    
+    .section-title {
+      font-size: 20px;
+    }
+    
+    .experience-item,
+    .post-card {
+      padding: 20px;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+    }
+  }

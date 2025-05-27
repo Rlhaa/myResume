@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유대원의 프로젝트</title>
+    <link rel="stylesheet" href="./project.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar">
+      <nav class="nav-container">
+        <ul class="nav-list">
+          <li><a href="/home.html" class="nav-link">Home</a></li>
+          <li><a href="/project.html" class="nav-link active">Projects</a></li>
+          <li><a href="/posts.html" class="nav-link">Posts</a></li>
+          <li><a href="/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div class="header-content">
+          <h1 class="page-title">Projects</h1>
+          <p class="page-description">지금까지 진행한 프로젝트들을 소개합니다.</p>
+        </div>
+      </section>
+
+      <section class="projects-section">
+        <div class="projects-grid" id="projectsGrid">
+          <!-- 프로젝트 카드들이 여기에 동적으로 추가됩니다 -->
+        </div>
+        
+        <div class="loading-state" id="loadingState" style="display: none;">
+          <div class="loading-spinner"></div>
+          <p>프로젝트를 불러오는 중...</p>
+        </div>
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <p>아직 등록된 프로젝트가 없습니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./project.js"></script>
+  </body>
+</html>

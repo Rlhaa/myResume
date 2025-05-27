@@ -1,0 +1,370 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #fafafa;
+    color: #1a1a1a;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  /* Navigation */
+  .navbar {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 48px;
+    padding: 20px 0;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #525252;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    color: #1a1a1a;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1a1a1a;
+    transition: width 0.2s ease;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 80px 0 60px 0;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .header-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .page-title {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  
+  .page-description {
+    font-size: 18px;
+    color: #525252;
+    line-height: 1.6;
+  }
+  
+  /* Projects Section */
+  .projects-section {
+    padding: 80px 0;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+  
+  /* Project Card */
+  .project-card {
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    padding: 32px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project-card:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .project-header {
+    margin-bottom: 20px;
+  }
+  
+  .project-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+  
+  .project-period {
+    font-size: 14px;
+    color: #525252;
+    font-weight: 500;
+  }
+  
+  .project-description {
+    font-size: 15px;
+    color: #404040;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+  
+  .project-tech {
+    margin-bottom: 24px;
+  }
+  
+  .tech-label {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tech-tag {
+    background: #f8f9fa;
+    border: 1px solid #e5e5e5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+  
+  .project-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .btn-primary {
+    background: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .btn-primary:hover {
+    background: #333333;
+    transform: translateY(-1px);
+  }
+  
+  .btn-secondary {
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #e5e5e5;
+  }
+  
+  .btn-secondary:hover {
+    border-color: #d4d4d4;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .btn-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Loading and Empty States */
+  .loading-state,
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #525252;
+  }
+  
+  .loading-spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid #e5e5e5;
+    border-top: 3px solid #1a1a1a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Project Status Badge */
+  .project-status {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .status-completed {
+    background: #d4edda;
+    color: #155724;
+  }
+  
+  .status-ongoing {
+    background: #fff3cd;
+    color: #856404;
+  }
+  
+  .status-planned {
+    background: #f8d7da;
+    color: #721c24;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+    
+    .nav-list {
+      gap: 24px;
+      padding: 16px 0;
+    }
+    
+    .nav-link {
+      font-size: 14px;
+    }
+    
+    .page-header {
+      padding: 48px 0 40px 0;
+    }
+    
+    .page-title {
+      font-size: 36px;
+    }
+    
+    .page-description {
+      font-size: 16px;
+    }
+    
+    .projects-section {
+      padding: 48px 0;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    
+    .project-card {
+      padding: 24px;
+    }
+    
+    .project-title {
+      font-size: 20px;
+    }
+    
+    .project-actions {
+      flex-direction: column;
+    }
+    
+    .btn {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .nav-list {
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .page-title {
+      font-size: 28px;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .project-card {
+      padding: 20px;
+    }
+    
+    .project-actions {
+      gap: 8px;
+    }
+  }
+  
+  /* Animation for new cards */
+  .project-card.fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

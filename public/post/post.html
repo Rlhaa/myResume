@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>유대원의 포스트</title>
+    <link rel="stylesheet" href="./post.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar">
+      <nav class="nav-container">
+        <ul class="nav-list">
+          <li><a href="/home.html" class="nav-link">Home</a></li>
+          <li><a href="/projects.html" class="nav-link">Projects</a></li>
+          <li><a href="/posts.html" class="nav-link active">Posts</a></li>
+          <li><a href="/resume.html" class="nav-link">Resume</a></li>
+          <li><a href="/about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="page-header">
+        <div class="header-content">
+          <h1 class="page-title">Posts</h1>
+          <p class="page-description">개발하면서 배운 것들을 정리한 글들입니다.</p>
+        </div>
+        
+        <div class="search-section">
+          <div class="search-container">
+            <input type="text" id="searchInput" placeholder="포스트 검색..." class="search-input">
+            <button class="search-btn" onclick="searchPosts()">
+              <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+            </button>
+          </div>
+          
+          <div class="filter-tags" id="filterTags">
+            <!-- 태그 필터들이 여기에 동적으로 추가됩니다 -->
+          </div>
+        </div>
+      </section>
+
+      <section class="posts-section">
+        <div class="posts-grid" id="postsGrid">
+          <!-- 포스트 카드들이 여기에 동적으로 추가됩니다 -->
+        </div>
+        
+        <div class="loading-state" id="loadingState" style="display: none;">
+          <div class="loading-spinner"></div>
+          <p>포스트를 불러오는 중...</p>
+        </div>
+        
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <p>검색 결과가 없습니다.</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./post.js"></script>
+  </body>
+</html>
